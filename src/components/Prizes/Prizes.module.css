@@ -1,0 +1,99 @@
+.prizes {
+  position: relative;
+}
+
+.fundLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 1.5rem;
+  border-block: 1px solid var(--color-border-dark);
+}
+
+.fundLabel {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-text-on-dark-muted);
+}
+
+.fundAmount {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1;
+  color: var(--color-cta);
+  letter-spacing: -0.02em;
+}
+
+.fundNote {
+  font-size: 0.95rem;
+  color: var(--color-text-on-dark-muted);
+  max-width: 32ch;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2rem);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-md);
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-accent);
+}
+
+.featured {
+  background: linear-gradient(160deg, rgba(245, 158, 11, 0.16), rgba(31, 122, 140, 0.12));
+  border-color: var(--color-cta);
+}
+
+.featured:hover {
+  border-color: var(--color-cta);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-light);
+}
+
+.amount {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1;
+  color: var(--color-light);
+  font-weight: 400;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .featured {
+    transform: translateY(-2rem);
+  }
+  .featured:hover {
+    transform: translateY(-2.6rem);
+  }
+}
