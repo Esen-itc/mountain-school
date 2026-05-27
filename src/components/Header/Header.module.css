@@ -2,20 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 50;
-  transition:
-    background var(--transition),
-    backdrop-filter var(--transition),
-    border-color var(--transition);
-  border-bottom: 1px solid transparent;
-}
-
-.scrolled {
-  background: rgba(2, 43, 58, 0.86);
-  backdrop-filter: saturate(160%) blur(14px);
-  -webkit-backdrop-filter: saturate(160%) blur(14px);
-  border-bottom-color: var(--color-border-dark);
+  width: 100%;
+  z-index: 1000;
+  background: rgba(22, 37, 43, 0.85);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .inner {
@@ -23,12 +15,8 @@
   align-items: center;
   justify-content: space-between;
   padding-block: 0.85rem;
-  color: var(--color-light);
+  color: #f0f0f0;
   transition: padding-block var(--transition);
-}
-
-.scrolled .inner {
-  padding-block: 0.55rem;
 }
 
 .brand {
@@ -79,7 +67,7 @@
   gap: 0.45rem;
   position: relative;
   padding-block: 0.4rem;
-  color: var(--color-text-on-dark);
+  color: #f0f0f0;
   transition: color var(--transition);
 }
 

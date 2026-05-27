@@ -1,0 +1,67 @@
+.section {
+  background: var(--color-light);
+}
+
+.bar {
+  border-bottom: 1px solid var(--color-border);
+  padding-block: clamp(1.25rem, 2.4vw, 1.75rem) 0;
+}
+
+.tabs {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-inline: calc(-1 * var(--container-padding));
+  padding-inline: var(--container-padding);
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  position: relative;
+  padding: 0.4rem 0.15rem 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.tab:hover {
+  color: var(--color-text);
+}
+
+.tabLabel {
+  display: inline-block;
+}
+
+.tabActive {
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  background: var(--color-dark);
+  border-radius: 999px;
+}
+
+.panel {
+  width: 100%;
+}
+

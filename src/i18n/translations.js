@@ -20,6 +20,7 @@ export const translations = {
     },
     nav: {
       about: 'О конкурсе',
+      brief: 'Задание',
       prizes: 'Призы',
       timeline: 'Этапы',
       criteria: 'Оценка',
@@ -40,6 +41,16 @@ export const translations = {
       meta: ['Архитектурный конкурс', 'Студенты СНГ', '2026'],
       title: 'Школа <em>в горах</em>,<br /> которую построят<br /> ваши идеи.',
       lead: 'Международный конкурс для студентов-архитекторов. Спроектируйте начальную школу для горного села в Кыргызстане. Жюри из Чикаго, призовой фонд $5 000 и шанс изменить жизнь целой общины.',
+      card: {
+        eyebrow: 'Architecture Competition',
+        title: 'ГОРНАЯ ШКОЛА 2026',
+        subtitle: 'Международный архитектурный конкурс',
+        prizeLabel: 'ПРИЗОВОЙ ФОНД —',
+        prizeAmount: '$5 000',
+        deadlineLabel: 'Срок подачи работ:',
+        deadlineDate: 'до 31 июля 2026',
+        cta: 'Зарегистрироваться',
+      },
     },
     about: {
       eyebrow: 'О конкурсе',
@@ -357,6 +368,7 @@ export const translations = {
     },
     nav: {
       about: 'About',
+      brief: 'Brief',
       prizes: 'Prizes',
       timeline: 'Timeline',
       criteria: 'Criteria',
@@ -377,6 +389,16 @@ export const translations = {
       meta: ['Architectural contest', 'CIS students', '2026'],
       title: 'A school <em>in the mountains</em>,<br /> built by <br /> your ideas.',
       lead: 'An international contest for architecture students. Design a primary school for a mountain village in Kyrgyzstan. A jury from Chicago, a $5,000 prize fund, and a chance to change the life of an entire community.',
+      card: {
+        eyebrow: 'Architecture Competition',
+        title: 'MOUNTAIN SCHOOL 2026',
+        subtitle: 'International architecture competition',
+        prizeLabel: 'PRIZE FUND —',
+        prizeAmount: '$5,000',
+        deadlineLabel: 'Submission deadline:',
+        deadlineDate: 'until July 31, 2026',
+        cta: 'Register now',
+      },
     },
     about: {
       eyebrow: 'About the contest',

@@ -10,17 +10,9 @@ import styles from './Header.module.css'
 
 export default function Header() {
   const { t } = useTranslation()
-  const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
   useScrollLock(open)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 32)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     if (!open) return undefined
@@ -35,7 +27,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+      <header className={styles.header}>
         <div className={`container ${styles.inner}`}>
           <a
             href="#hero"
