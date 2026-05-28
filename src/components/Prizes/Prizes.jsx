@@ -18,6 +18,8 @@ const cardVariants = {
 export default function Prizes() {
   const { t } = useTranslation()
   const list = t('prizes.list', [])
+  const stats = t('prizes.stats')
+  const bonus = t('prizes.bonus')
 
   return (
     <section id="prizes" className={`section ${styles.prizes}`}>
@@ -33,6 +35,8 @@ export default function Prizes() {
           <span className={styles.fundAmount}>{t('prizes.fundAmount')}</span>
           <span className={styles.fundNote}>{t('prizes.fundNote')}</span>
         </div>
+
+        {stats && <p className={styles.stats}>{stats}</p>}
 
         <div className={styles.grid}>
           {list.map((prize, index) => {
@@ -52,10 +56,26 @@ export default function Prizes() {
                 </span>
                 <h3 className={styles.title}>{prize.title}</h3>
                 <span className={styles.amount}>{prize.amount}</span>
+                {prize.description && (
+                  <p className={styles.description}>{prize.description}</p>
+                )}
               </motion.article>
             )
           })}
         </div>
+
+        {bonus && bonus.title && (
+          <div className={styles.bonus}>
+            <h3 className={styles.bonusTitle}>{bonus.title}</h3>
+            <ul className={styles.bonusList}>
+              {(bonus.items ?? []).map((item) => (
+                <li key={item} className={styles.bonusItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   )
