@@ -38,6 +38,9 @@ export default function Criteria() {
             >
               <span className={styles.score}>{item.score}</span>
               <span className={styles.title}>{item.title}</span>
+              {item.description && (
+                <span className={styles.description}>{item.description}</span>
+              )}
             </motion.div>
           ))}
         </div>

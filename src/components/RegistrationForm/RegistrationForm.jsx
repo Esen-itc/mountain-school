@@ -131,9 +131,11 @@ export default function RegistrationForm() {
                   <Check size={28} strokeWidth={2.5} />
                 </span>
                 <h3 className={styles.successTitle}>
-                  {t('register.success.title')}
+                  Заявка отправлена!
                 </h3>
-                <p className={styles.successText}>{t('register.success.text')}</p>
+                <p className={styles.successText}>
+                  Спасибо! Мы получили вашу заявку и свяжемся с вами в ближайшее время.
+                </p>
                 <Button type="button" variant="ghost" onClick={resetToForm}>
                   {t('register.success.again')}
                 </Button>
