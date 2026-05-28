@@ -59,12 +59,16 @@ export default function Header() {
             <button
               type="button"
               className={styles.toggle}
-              onClick={() => setOpen(true)}
-              aria-label={t('common.openMenu')}
+              onClick={() => setOpen((prev) => !prev)}
+              aria-label={open ? t('common.closeMenu') : t('common.openMenu')}
               aria-expanded={open}
               aria-controls="mobile-nav-panel"
             >
-              <Menu size={20} aria-hidden="true" />
+              {open ? (
+                <X size={20} aria-hidden="true" />
+              ) : (
+                <Menu size={20} aria-hidden="true" />
+              )}
             </button>
           </div>
         </div>

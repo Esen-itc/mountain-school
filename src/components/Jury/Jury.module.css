@@ -1,5 +1,6 @@
-.jury {
+.jury.jury {
   position: relative;
+  background: #f4f5f7;
 }
 
 .grid {

@@ -1,4 +1,4 @@
-.section {
+.section.section {
   background: var(--color-dark);
   color: var(--color-light);
   position: relative;

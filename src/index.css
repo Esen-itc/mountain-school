@@ -94,6 +94,14 @@ img {
   padding-block: clamp(2.75rem, 7vw, 6rem);
 }
 
+.section:nth-child(even) {
+  background: #ffffff;
+}
+
+.section:nth-child(odd) {
+  background: #f4f5f7;
+}
+
 .section--alt {
   background: var(--color-bg-secondary);
 }

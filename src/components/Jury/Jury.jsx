@@ -47,7 +47,19 @@ export default function Jury() {
             >
               <span className={styles.photo} aria-hidden="true">
                 {member.photo ? (
-                  <img src={member.photo} alt="" loading="lazy" />
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    onError={(e) => {
+                      e.target.style.display = 'none'
+                    }}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '50%',
+                    }}
+                  />
                 ) : (
                   initialsOf(member.name)
                 )}

@@ -1,5 +1,6 @@
-.timeline {
+.timeline.timeline {
   position: relative;
+  background: #f4f5f7;
 }
 
 .row {

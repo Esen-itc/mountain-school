@@ -1,5 +1,5 @@
-.brief {
-  background: var(--color-bg-secondary);
+.brief.brief {
+  background: #f4f5f7;
   position: relative;
 }
 
