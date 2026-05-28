@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useForm, useWatch } from 'react-hook-form'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, Mail, Send } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 import InstagramIcon from '../ui/icons/InstagramIcon'
 import Button from '../ui/Button/Button'
 import SectionTitle from '../ui/SectionTitle/SectionTitle'
@@ -56,48 +57,29 @@ export default function RegistrationForm() {
 
   const isTeam = useWatch({ control, name: 'format' }) === TEAM_FORMAT
 
-  const onSubmit = (data) => {
-    const isRussian = lang === 'ru'
-    const submittedAt = new Intl.DateTimeFormat(isRussian ? 'ru-RU' : 'en-US', {
-      dateStyle: 'medium',
-      timeStyle: 'short',
-    }).format(new Date())
-
-    const rows = [
-      [form.fullName.label, data.fullName.trim()],
-      [form.email.label, data.email.trim()],
-      [form.contact.label, data.contact.trim()],
-      [form.university.label, data.university.trim()],
-      [form.country.label, getOptionLabel(countries, data.country)],
-      [form.course.label, getOptionLabel(courses, data.course)],
-      [form.format.label, getOptionLabel(formats, data.format)],
-    ]
-
-    if (data.format === TEAM_FORMAT) {
-      rows.push([form.teamMembers.label, data.teamMembers.trim()])
+  const onSubmit = async (data) => {
+    try {
+      await emailjs.send(
+        'service_irpov6p',
+        'template_xeqmkkk',
+        {
+          fio: data.fullName.trim(),
+          email: data.email.trim(),
+          telegram: data.contact.trim(),
+          university: data.university.trim(),
+          country: getOptionLabel(countries, data.country),
+          course: getOptionLabel(courses, data.course),
+          format: getOptionLabel(formats, data.format),
+          members:
+            data.format === TEAM_FORMAT ? data.teamMembers.trim() : '',
+        },
+        'vGuInSB3NN526uOur',
+      )
+      setStatus('success')
+      reset()
+    } catch (error) {
+      alert('Ошибка отправки, попробуйте снова')
     }
-
-    rows.push(
-      [isRussian ? 'Язык формы' : 'Form language', lang.toUpperCase()],
-      [isRussian ? 'Дата' : 'Date', submittedAt],
-    )
-
-    const body = [
-      isRussian
-        ? 'Здравствуйте! Хочу подать заявку на конкурс «Горная школа 2026».'
-        : 'Hello! I would like to submit an application for the Mountain School 2026 contest.',
-      '',
-      ...rows.map(([label, value]) => `${label}: ${value}`),
-    ].join('\n')
-
-    window.location.assign(createMailtoUrl({
-      to: CONTACT_EMAIL,
-      subject: t('register.mailSubject'),
-      body,
-    }))
-
-    setStatus('success')
-    reset()
   }
 
   const resetToForm = () => {
